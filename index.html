@@ -84,15 +84,16 @@ passionate about:<br / > good decision-making!</p>
 						</header>
 						<div class="row">
 							<h3>1. Project Goals</h3>
-							<h4>Motivation</h3> 
-							<p>Rockbuster Stealth LLC is a movie rental company that used to have stores around the world. Facing stiff competition from streaming services, the Rockbuster Stealth management team is planning to use its existing movie licenses to launch an online video rental service to stay competitive.</p> 
-							<h4>Objective</h3> 
-							<p>Extract key insights from RockBuster’s operational database to help with the launch strategy for the new online video service.</p>
-
- 							<img src="images/fulls/zoomed-erd.png" alt="Zoomed view of Entity Relationship Diagram" /> 
-							
+							<h4>Motivation</h4> 
+							<p class="justified">Rockbuster Stealth LLC is a movie rental company that used to have stores around the world. Facing stiff competition from streaming services, the Rockbuster Stealth management team is planning to use its existing movie licenses to launch an online video rental service to stay competitive.</p> 
+							<h4>Objective</h4> 
+							<p class="justified">Extract key insights from RockBuster’s operational database to help with the launch strategy for the new online video service.</p>
+							<figure>
+ 								<img class="img fit thumb" src="images/fulls/zoomed-erd.png" alt="Zoomed view of Entity Relationship Diagram" /> 
+								<figcaption>Zoom of ERD over Fact Tables payment and rental. Where 'juicy' business info typically is</figcaption>
+							</figure>
 							<h3>2. Key Questions</h3>
-							<p>RockBuster Stealth LLC management had some questions that wanted answers for:</p>
+							<p class="justified">RockBuster Stealth LLC management had some questions that wanted answers for:</p>
 								<ul>
 									<li>Which movies contributed the most/least to revenue gain?</li>
 									<li>What was the average rental duration for all videos?</li>
@@ -100,7 +101,7 @@ passionate about:<br / > good decision-making!</p>
 									<li>Where are customers with a high lifetime value based?</li>
 									<li>Do sales figures vary between geographic regions?</li>	
 								</ul>
-							<p>Besides these, and after investigating which additional insights I could extract from the data that was provided, I launched a set of extra questions:</p>
+							<p class="justified">Besides these, and after investigating which additional insights I could extract from the data that was provided, I launched a set of extra questions:</p>
  								<ul>
 									<li>How is the revenue distributed across the film catalog? What does this tell us?</li>
 									<li>Is there any film rating and/or category that stands out and deserves special marketing attention?</li>
@@ -108,13 +109,16 @@ passionate about:<br / > good decision-making!</p>
 									<li>How does each rental rate perform in relative terms? What else does this analysis uncovers?</li>	
 								</ul>
 							<h3>3. Process</h3>
-							<p>Rockbuster provided the Dataset with their operational data. Therefore, with exception to sourcing data, I developed a full life cycle of data analysis, from data cleaning to final presentation to stakeholders, including documenting the database itself, producing a data dictionary (link). 
+							<p class="justified">Rockbuster provided the Dataset with their operational data. Therefore, with exception to sourcing data, I developed a full life cycle of data analysis, from data cleaning to final presentation to stakeholders, including documenting the database itself, producing a data dictionary (link). 
 							Using SQL for this process, I started from scratch installing Postrgesql - a relational database Management system - and pgadmin4 which acts as user interface to deal with the database itself. 
 							There, I made all actions related with cleaning and summarizing data, and on a later stage developed the queries that were needed to answer the relevant business questions, using techniques such as table joins, subqueries, common table expressions and windows functions.</p>
 
- 							(picture of pgadmin4 with a nasty query) 
+ 							<figure>
+ 								<img class="img fit thumb" src="images/fulls/pgadmin4.png" alt="Pgadmin4 web interface" /> 
+								<figcaption>Pgadmin4 web interface showing a query using CTE's and Window functions</figcaption>
+							</figure> 
 
- 							<p>All the queries and corresponding outputs were compiled in an excel file (insert link), to be shared with technical peers.</p>
+ 							<p class="justified">All the queries and corresponding outputs were compiled in an excel file (insert link), to be shared with technical peers.</p>
 							<h3>4. Key Insights from Data</h3>
 							<h4>Distribution of revenue across the film catalog.</h4> 
 							<p>Showcase the curve with the most relevant points (and associated recommendation) 
