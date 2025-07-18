@@ -86,17 +86,23 @@
 						</header>
 						<div>
 							<h3>1. Project Goals</h3>
-							<p>Motivation</p> 
-							<p class="justified">Rockbuster Stealth LLC is a fictional movie rental company that used to have stores around the world. Facing stiff competition from streaming services, the Rockbuster Stealth management team is planning to use its existing movie licenses to launch an online video rental service to stay competitive.</p> 
-							<p>Objective</p> 
-							<p class="justified">Extract key insights from RockBuster’s operational database to help with the launch strategy for the new online video service.</p>
+							<p class="justified"><u>Motivation</u><br /> 
+							Rockbuster Stealth LLC is a fictional movie rental company that used to have stores around the world. Facing stiff competition from streaming services, the Rockbuster Stealth management team is planning to use its existing movie licenses to launch an online video rental service to stay competitive.</p> 
+							<p class="justified"><u>Objective</u><br /> 
+							Extract key insights from RockBuster’s operational database to help with the launch strategy for the new online video service.</p>
 							<div class="box alt">
 								<div class="row gtr-50 gtr-uniform">
-									<div class="col-12"><span class="image fit"><img src="images/fulls/zoomed-erd.png" alt="Zoomed view of Entity Relationship Diagram" /></span></div>
+									<div class="col-12"><span class="image fit">
+										<figure>
+											<img src="images/fulls/zoomed-erd.png" alt="Zoomed view of Entity Relationship Diagram" />
+											<figcaption>payment and rental are the Fact Tables. Biggest business question typically pass through those.</figcaption>
+										</figure>
+										
+									</span></div>
 								</div>
 							</div>
 							<h3>2. Key Questions</h3>
-							<p class="justified">RockBuster Stealth LLC management had some questions that wanted answers for:</p>
+							<p class="justified">RockBuster Stealth LLC management had some questions that wanted answers for:
 								<ul>
 									<li>Which movies contributed the most/least to revenue gain?</li>
 									<li>What was the average rental duration for all videos?</li>
@@ -104,13 +110,15 @@
 									<li>Where are customers with a high lifetime value based?</li>
 									<li>Do sales figures vary between geographic regions?</li>	
 								</ul>
-							<p class="justified">Besides these, and after investigating which additional insights I could extract from the data that was provided, I launched a set of extra questions:</p>
+							</p>
+							<p class="justified">Besides these, and after investigating which additional insights I could extract from the data that was provided, I launched a set of extra questions:
  								<ul>
 									<li>How is the revenue distributed across the film catalog? What does this tell us?</li>
 									<li>Is there any film rating and/or category that stands out and deserves special marketing attention?</li>
 									<li>What’s our customers effective rental pattern in terms of duration? Do they comply with the rentals as per catalog?</li>
 									<li>How does each rental rate perform in relative terms? What else does this analysis uncovers?</li>	
 								</ul>
+							</p>
 							<h3>3. Process</h3>
 							<p class="justified">Rockbuster provided the Dataset with their operational data. Therefore, with exception to sourcing data, I developed a full life cycle of data analysis, from data cleaning to final presentation to stakeholders, including documenting the database itself, producing a data dictionary (link). 
 							<br />Using SQL for this process, I started from scratch installing Postrgesql - a relational database management system - and pgadmin4 which acts as user interface to deal with the database itself. 
@@ -127,9 +135,17 @@
 							</div>
  							<p class="justified">All the queries and corresponding outputs were compiled in an excel file (insert link), to be shared with technical peers.</p>
 							<h3>4. Key Insights from Data</h3>
-							<h4>Distribution of revenue across the film catalog.</h4> 
-							<p>Showcase the curve with the most relevant points (and associated recommendation) 
-							Legend: This is arguably the most interesting insight of the project.</p>
+							<h4>Distribution of revenue across the film catalog.</h4>
+							<div class="box alt">
+								<div class="row gtr-50 gtr-uniform">
+									<div class="col-12"><span class="image fit">
+										<figure>
+											<img src="images/fulls/revenue-per-film.png" alt="Distribution curve films vs revenue" />
+											<figcaption>This is arguably the most interesting insight of the project!</figcaption>
+										</figure>
+									</span></div>
+								</div>
+							</div>
 							<h4>Rental rate performance</h4>. 
 							picture: Revenue distribution.  
 							<p>But the immediate question was, shouldn’t a rate of $4.99 perform approximately 5 times better than $0.99?</p>
