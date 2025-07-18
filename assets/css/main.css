@@ -2148,6 +2148,9 @@ input, select, textarea {
 				border-radius: 100%;
 				width: 100%;
 			}
+	figcaption {
+  		text-align: center;
+	}
 
 /* List */
 
