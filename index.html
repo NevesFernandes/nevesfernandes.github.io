@@ -36,7 +36,7 @@
 		<!-- Main -->
 			<div id="main">
 
-				<!-- One -->
+				<!-- About me -->
 					<section id="one">
 						<header class="major">
 							<h2>About me</h2>
@@ -54,30 +54,105 @@ passionate about:<br / > good decision-making!</p>
 						</ul>
 					</section>
 
-				<!-- Two -->
+				<!-- Main Projects -->
 					<section id="two">
 						<header class="major">
 							<h2>Main Projects</h2>
 						</header>
 						<div class="row">
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/01.jpg" class="image fit thumb"><img src="images/thumbs/01.jpg" alt="" /></a>
+								<a href="#rockbuster" class="image fit thumb"><img src="images/thumbs/01.jpg" alt="" /></a>
 								<h3>RockBuster Stealth LLC</h3>
 								<p>Data-driven approach to help with the launch strategy for the new online video service</p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/02.jpg" class="image fit thumb"><img src="images/thumbs/02.jpg" alt="" /></a>
+								<a href="#influenza" class="image fit thumb"><img src="images/thumbs/02.jpg" alt="" /></a>
 								<h3>Preparing for Influenza Season</h3>
 								<p>Assisting a medical staff agency on how to distribute staff geographically and in time for the upcoming Influenza Season</p>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
-								<a href="images/fulls/03.jpg" class="image fit thumb"><img src="images/thumbs/03.jpg" alt="" /></a>
+								<a href="instacart" class="image fit thumb"><img src="images/thumbs/03.jpg" alt="" /></a>
 								<h3>Instacart Database Analysis???</h3>
 								<p>Uncovering sales patterns and suggesting strategies for better segmentation</p>
 							</article>
 						</div>
 					</section>
+				<!-- Projects -->
+					<section id="rockbuster">
+						<header class="major">
+							<h2>RockBuster Stealth LLC</h2>
+						</header>
+						<div class="row">
+							<h3>1. Project Goals</h3>
+							<h4>Motivation</h3> 
+							<p>Rockbuster Stealth LLC is a movie rental company that used to have stores around the world. Facing stiff competition from streaming services, the Rockbuster Stealth management team is planning to use its existing movie licenses to launch an online video rental service to stay competitive.</p> 
+							<h4>Objective</h3> 
+							<p>Extract key insights from RockBuster’s operational database to help with the launch strategy for the new online video service.</p>
 
+ 							(picture of part of ERD – fact tables in the center) 
+							
+							<h3>2. Key Questions</h3>
+							<p>RockBuster Stealth LLC management had some questions that wanted answers for:</p>
+								<ul>
+									<li>Which movies contributed the most/least to revenue gain?</li>
+									<li>What was the average rental duration for all videos?</li>
+									<li>What was the average rental duration for all videos?</li>
+									<li>Where are customers with a high lifetime value based?</li>
+									<li>Do sales figures vary between geographic regions?</li>	
+								</ul>
+							<p>Besides these, and after investigating which additional insights I could extract from the data that was provided, I launched a set of extra questions:</p>
+ 								<ul>
+									<li>How is the revenue distributed across the film catalog? What does this tell us?</li>
+									<li>Is there any film rating and/or category that stands out and deserves special marketing attention?</li>
+									<li>What’s our customers effective rental pattern in terms of duration? Do they comply with the rentals as per catalog?</li>
+									<li>How does each rental rate perform in relative terms? What else does this analysis uncovers?</li>	
+								</ul>
+							<h3>3. Process</h3>
+							<p>Rockbuster provided the Dataset with their operational data. Therefore, with exception to sourcing data, I developed a full life cycle of data analysis, from data cleaning to final presentation to stakeholders, including documenting the database itself, producing a data dictionary (link). 
+							Using SQL for this process, I started from scratch installing Postrgesql - a relational database Management system - and pgadmin4 which acts as user interface to deal with the database itself. 
+							There, I made all actions related with cleaning and summarizing data, and on a later stage developed the queries that were needed to answer the relevant business questions, using techniques such as table joins, subqueries, common table expressions and windows functions.</p>
+
+ 							(picture of pgadmin4 with a nasty query) 
+
+ 							<p>All the queries and corresponding outputs were compiled in an excel file (insert link), to be shared with technical peers.</p>
+							<h3>4. Key Insights from Data</h3>
+							<h4>Distribution of revenue across the film catalog.</h4> 
+							<p>Showcase the curve with the most relevant points (and associated recommendation) 
+							Legend: This is arguably the most interesting insight of the project.</p>
+							<h4>Rental rate performance</h4>. 
+							picture: Revenue distribution.  
+							<p>But the immediate question was, shouldn’t a rate of $4.99 perform approximately 5 times better than $0.99?</p>
+							picture: Show profit ratios.
+ 							<p>But why does this happen?</p> 
+							<p>The secret lies in the penalty policy. Our customers keep their films in completely different patterns from what would be expectable as per defined in catalog, and they incur in penalties in case of delays.</p>  
+							picture: Show distribution of rental durations by customers and show delays. 
+							<p>Looking deeper into the data, I’ve discovered that the penalties are a fixed amount (1$) per day of delay, which in turn influences more the lowest rental rate.</p>
+							<h4>Ocupancy Ratio</h4>
+							picture with occupancy ration
+							<h4>Geographical Distribution of customers and revenue</h4>
+							picture: show geographical distributions of customers and revenue
+ 							<h3>5. Results</h3> 
+							<p>Recommendations to the online video service launch strategy:</p>
+								<ul>
+									<li>Remove variable rental duration concept and apply one single duration for all rentals. Recommended 48H.</li>
+									<li>Focus promotional efforts on the top 30% of films. They represent more than half of the revenue.</li>
+									<li>Expand the film catalog with films based in our top countries (e.g. Bollywood films, as India is the top country in customers and revenue)</li>
+									<li>Monitor dynamically occupancy ratio to:
+										<ul>
+											<li>decide when to purchase additional licenses for top requested films</li>
+											<li>propose discounted rentals on films with lower occupancy ratio
+										</ul>
+									</li>
+									<li>Focus geographical marketing efforts in the top revenue countries as well as in the top revenue per customer</li>	
+								</ul>
+ 							<h3>6. Deliverables</h3>
+							<p>Data Dictionary (provide link)</p>
+							<p>SQL queries and their results (link to Excel file)</p>
+							<p>Power point presentation (provide link)</p>
+
+							<p>Link to Github repository</p>
+						</div>
+					</section>
 				<!-- Three -->
 					<section id="three">
 						<h2>Contacts</h2>
