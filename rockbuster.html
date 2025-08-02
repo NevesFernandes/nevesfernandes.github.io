@@ -1,0 +1,98 @@
+            <header class="major">
+							<h2>RockBuster Stealth LLC</h2>
+						</header>
+						<div>
+							<h3>1. Project Goals</h3>
+							<p class="justified"><u>Motivation</u><br /> 
+							Rockbuster Stealth LLC is a fictional movie rental company that used to have stores around the world. Facing stiff competition from streaming services, the Rockbuster Stealth management team is planning to use its existing movie licenses to launch an online video rental service to stay competitive.</p> 
+							<p class="justified"><u>Objective</u><br /> 
+							Extract key insights from RockBuster’s operational database to help with the launch strategy for the new online video service.</p>
+							<div class="box alt">
+								<div class="row gtr-50 gtr-uniform">
+									<div class="col-12"><span class="image fit">
+										<figure>
+											<img src="images/fulls/zoomed-erd.png" alt="Zoomed view of Entity Relationship Diagram" />
+											<figcaption>payment and rental are the Fact Tables. Biggest business question typically pass through those.</figcaption>
+										</figure>
+										
+									</span></div>
+								</div>
+							</div>
+							<h3>2. Key Questions</h3>
+							<p class="justified">RockBuster Stealth LLC management had some questions that wanted answers for:
+								<ul>
+									<li>Which movies contributed the most/least to revenue gain?</li>
+									<li>What was the average rental duration for all videos?</li>
+									<li>What was the average rental duration for all videos?</li>
+									<li>Where are customers with a high lifetime value based?</li>
+									<li>Do sales figures vary between geographic regions?</li>	
+								</ul>
+							</p>
+							<p class="justified">Besides these, and after investigating which additional insights I could extract from the data that was provided, I launched a set of extra questions:
+ 								<ul>
+									<li>How is the revenue distributed across the film catalog? What does this tell us?</li>
+									<li>Is there any film rating and/or category that stands out and deserves special marketing attention?</li>
+									<li>What’s our customers effective rental pattern in terms of duration? Do they comply with the rentals as per catalog?</li>
+									<li>How does each rental rate perform in relative terms? What else does this analysis uncovers?</li>	
+								</ul>
+							</p>
+							<h3>3. Process</h3>
+							<p class="justified">Rockbuster provided the Dataset with their operational data. Therefore, with exception to sourcing data, I developed a full life cycle of data analysis, from data cleaning to final presentation to stakeholders, including documenting the database itself, producing a data dictionary (link). 
+							<br />Using SQL for this process, I started from scratch installing Postrgesql - a relational database management system - and pgadmin4 which acts as user interface to deal with the database itself. 
+							There, I made all actions related with cleaning and summarizing data, and on a later stage developed the queries that were needed to answer the relevant business questions, using techniques such as table joins, subqueries, common table expressions and windows functions.</p>
+							<div class="box alt">
+								<div class="row gtr-50 gtr-uniform">
+									<div class="col-12"><span class="image fit">
+										<figure>
+											<img src="images/fulls/pgadmin4.png" alt="Pgadmin4 web interface" />
+											<figcaption>Pgadmin4 view with a Query using CTEs and Window functions</figcaption>
+										</figure>
+									</span></div>
+								</div>
+							</div>
+ 							<p class="justified">All the queries and corresponding outputs were compiled in an excel file (insert link), to be shared with technical peers.</p>
+							<h3>4. Key Insights from Data</h3>
+							<h4>Distribution of revenue across the film catalog.</h4>
+							<div class="box alt">
+								<div class="row gtr-50 gtr-uniform">
+									<div class="col-12"><span class="image fit">
+										<figure>
+											<img src="images/fulls/revenue-distribution.png" alt="Distribution curve films vs revenue" />
+											<figcaption>This is probably one of the most interesting insights of the project!</figcaption>
+										</figure>
+									</span></div>
+								</div>
+							</div>
+							<h4>Rental rate performance</h4>. 
+							picture: Revenue distribution.  
+							<p>But the immediate question was, shouldn’t a rate of $4.99 perform approximately 5 times better than $0.99?</p>
+							picture: Show profit ratios.
+ 							<p>But why does this happen?</p> 
+							<p>The secret lies in the penalty policy. Our customers keep their films in completely different patterns from what would be expectable as per defined in catalog, and they incur in penalties in case of delays.</p>  
+							picture: Show distribution of rental durations by customers and show delays. 
+							<p>Looking deeper into the data, I’ve discovered that the penalties are a fixed amount (1$) per day of delay, which in turn influences more the lowest rental rate.</p>
+							<h4>Ocupancy Ratio</h4>
+							picture with occupancy ration
+							<h4>Geographical Distribution of customers and revenue</h4>
+							picture: show geographical distributions of customers and revenue
+ 							<h3>5. Results</h3> 
+							<p>Recommendations to the online video service launch strategy:</p>
+								<ul>
+									<li>Remove variable rental duration concept and apply one single duration for all rentals. Recommended 48H.</li>
+									<li>Focus promotional efforts on the top 30% of films. They represent more than half of the revenue.</li>
+									<li>Expand the film catalog with films based in our top countries (e.g. Bollywood films, as India is the top country in customers and revenue)</li>
+									<li>Monitor dynamically occupancy ratio to:
+										<ul>
+											<li>decide when to purchase additional licenses for top requested films</li>
+											<li>propose discounted rentals on films with lower occupancy ratio
+										</ul>
+									</li>
+									<li>Focus geographical marketing efforts in the top revenue countries as well as in the top revenue per customer</li>	
+								</ul>
+ 							<h3>6. Deliverables</h3>
+							<p>Data Dictionary (provide link)</p>
+							<p>SQL queries and their results (link to Excel file)</p>
+							<p>Power point presentation (provide link)</p>
+
+							<p>Link to Github repository</p>
+						</div>
