@@ -16,7 +16,7 @@
 			<header id="header">
 				<div class="inner">
 					<a class="image avatar"><img src="images/rockbuster_logo.png" alt="RockBuster Logo" /></a>
-					<h1><strong>RockBuster Stealth LLC Project</strong></h1>
+					<h1><strong>Rockbuster Stealth LLC Project</strong></h1>
 					<h1>A data-driven approach <br />to streaming service launch strategy</h1>
 				</div>
 				<!-- Footer -->
@@ -34,44 +34,44 @@
 		<!-- Main -->
 			<div id="main">		
 				<header class="major">
-					<h2>RockBuster Stealth LLC</h2>
+					<h1>Rockbuster Stealth LLC</h1>
 				</header>
 				<div>
-				<h3>1. Project Goals</h3>
-				<p class="justified"><u>Motivation</u><br /> 
-				Rockbuster Stealth LLC is a fictional movie rental company that used to have stores around the world. Facing stiff competition from streaming services, the Rockbuster Stealth management team is planning to use its existing movie licenses to launch an online video rental service to stay competitive.</p> 
-				<p class="justified"><u>Objective</u><br /> 
-				Extract key insights from RockBuster’s operational database to help with the launch strategy for the new online video service.</p>
-				<div class="box alt">
-					<div class="row gtr-50 gtr-uniform">
-						<div class="col-12"><span class="image fit">
-							<figure>
-								<img src="images/fulls/zoomed-erd.png" alt="Zoomed view of Entity Relationship Diagram" />
-								<figcaption>Zoomed view of ERD with fact tables, payment and rental</figcaption>
-							</figure>
-						</span></div>
+				<h2>1. Project Goals</h2>
+					<p class="justified"><u>Motivation</u><br /> 
+					Rockbuster Stealth LLC is a fictional movie rental company that used to have stores around the world. Facing stiff competition from streaming services, the Rockbuster Stealth management team is planning to use its existing movie licenses to launch an online video rental service to stay competitive.</p> 
+					<p class="justified"><u>Objective</u><br /> 
+					Extract key insights from RockBuster’s operational database to help with the launch strategy for the new online video service.</p>
+					<div class="box alt">
+						<div class="row gtr-50 gtr-uniform">
+							<div class="col-12"><span class="image fit">
+								<figure>
+									<img src="images/fulls/zoomed-erd.png" alt="Zoomed view of Entity Relationship Diagram" />
+									<figcaption>Zoomed view of ERD with fact tables, payment and rental</figcaption>
+								</figure>
+							</span></div>
+						</div>
 					</div>
-				</div>
-				<h3>2. Key Questions</h3>
-				<p class="justified">RockBuster Stealth LLC management had some questions that wanted answers for:
-					<ul>
-						<li>Which movies contributed the most/least to revenue gain?</li>
-						<li>What was the average rental duration for all videos?</li>
-						<li>Which countries are Rockbuster customers based in?</li>
-						<li>Where are customers with a high lifetime value based?</li>
-						<li>Do sales figures vary between geographic regions?</li>	
-					</ul>
-				</p>
-				<p class="justified">Besides these, and after some exploratory data analysis, I raised a set of extra questions:
- 					<ul>
-						<li>How is the revenue distributed across the film catalog? What does this tell us?</li>
-						<li>Is there any film rating and/or category that stands out and deserves special marketing attention?</li>
-						<li>What’s our customers effective rental pattern in terms of duration? Do they comply with the rentals as per catalog?</li>
-						<li>How does each rental rate perform in relative terms? What else does this analysis uncovers?</li>	
-					</ul>
-				</p>
-				<h3>3. Process</h3>
-				<p class="justified">Rockbuster provided the Dataset with their operational data. Therefore, with exception to sourcing data, I developed a full life cycle of data analysis, from data cleaning to final presentation to stakeholders, including documenting the database itself, producing a data dictionary (link). 
+				<h2>2. Key Questions</h2>
+					<p class="justified">RockBuster Stealth LLC management had some questions that wanted answers for:
+						<ul>
+							<li>Which movies contributed the most/least to revenue gain?</li>
+							<li>What was the average rental duration for all videos?</li>
+							<li>Which countries are Rockbuster customers based in?</li>
+							<li>Where are customers with a high lifetime value based?</li>
+							<li>Do sales figures vary between geographic regions?</li>	
+						</ul>
+					</p>
+					<p class="justified">Besides these, and after some exploratory data analysis, I raised a set of extra questions:
+ 						<ul>
+							<li>How is the revenue distributed across the film catalog? What does this tell us?</li>
+							<li>Is there any film rating and/or category that stands out and deserves special marketing attention?</li>
+							<li>What’s our customers effective rental pattern in terms of duration? Do they comply with the rentals as per catalog?</li>
+							<li>How does each rental rate perform in relative terms? What else does this analysis uncovers?</li>	
+						</ul>
+					</p>
+				<h2>3. Process</h2>
+					<p class="justified">Rockbuster provided the Dataset with their operational data. Therefore, with exception to sourcing data, I developed a full life cycle of data analysis, from data cleaning to final presentation to stakeholders, including documenting the database itself, producing a data dictionary (link). 
 					<br />Using SQL for this process, I started from scratch installing Postrgesql - a relational database management system - and pgadmin4 which acts as user interface to deal with the database itself. 
 					There, I made all actions related with cleaning and summarizing data, and on a later stage developed the queries that were needed to answer the relevant business questions, using techniques such as table joins, subqueries, common table expressions and windows functions.</p>
 					<div class="box alt">
@@ -85,8 +85,8 @@
 						</div>
 					</div>
  					<p class="justified">All the queries and corresponding outputs were compiled in an excel file (insert link), to be shared with technical peers.</p>
-					<h3>4. Key Insights from Data</h3>
-					<h4>Distribution of revenue across the film catalog.</h4>
+					<h2>4. Key Insights from Data</h2>
+					<h3>Distribution of revenue across the film catalog</h3>
 					<div class="box alt">
 						<div class="row gtr-50 gtr-uniform">
 							<div class="col-12"><span class="image fit">
@@ -97,11 +97,11 @@
 							</span></div>
 						</div>
 					</div>
-					<h4>Rental rates performance</h4>. 
+					<h3>Rental rates performance</h3>. 
 					<p class="justified">
 						<span class="image left"><img src="images/thumbs/revenue_distr.png" alt="Revenue Distribution per rental rate" /></span>
 						<span class="image right"><img src="images/thumbs/legend.png" alt="Rental rates legend" /></span>
-						On the left it's shown the revenue distribution for each of the rental rates defined in the catalog.
+						On the left it's shown the revenue distribution for each of the rental rates defined in the catalog.<br />
 						Rate in this context is simply the price at which the films are rented for the agreed rental duration.
 						Since the number of rentals on each rate are well balanced, the average revenue per rental follows a very similar distribution.
 						But the immediate question was: 
@@ -114,17 +114,60 @@
 						<blockquote><b>But why does this happen?</b></blockquote>
 						The secret lies in the penalty policy. 
 						The customers keep their films in completely different patterns from what would be expectable just by looking at what is defined in the catalog, and they incur in penalties in case of delays.
-					</p> 
-					<p class="justified">Looking deeper into the data, I’ve discovered that the penalties are a fixed amount (1$) per day of delay, which in turn influences more the lowest rental rate.</p>
-					<blockquote>NEED TO SHOW PROOF OF THIS</blockquote>
-					<h4>Ocupancy Ratio</h4>
-						picture with occupancy ration
-					<h4>Geographical Distribution of customers and revenue</h4>
-						picture: show geographical distributions of customers and revenue
- 					<h3>5. Results</h3> 
-					<p>Recommendations to the online video service launch strategy:</p>
+						Looking deeper into the data, I’ve discovered that the penalties are a fixed amount (1$) per day of delay, which in turn influences more the lowest rental rate.</p>
+					<div class="box alt">
+						<div class="row gtr-50 gtr-uniform">
+							<div class="col-12"><span class="image fit">
+								<figure>
+									<img src="images/fulls/payments_vs_delays.png" alt="Payments versus delays" />
+									<figcaption>How amounts paid evolve with the days in delay</figcaption>
+								</figure>
+							</span></div>
+						</div>
+					</div>
+					<h3>Ocupancy Ratio</h3>
+					<p class="justified">
+					Another metric developed was the Occupancy Ratio.
+					It was measured the timespan between the first rental date and the last return date on the database, serving as the denominator for the ratio (100% of time).
+					Then, I measured for each existing copy of the films, how much time they were effectively on rental (or on the other hand they were catching dust in our stores shelves).
+					Finally, I've computed an average time of the several copies of each film. The division of the latter by the denominator gave us the film's Occupancy Ratio.
+					</p>
+					<div class="box alt">
+						<div class="row gtr-50 gtr-uniform">
+							<div class="col-12"><span class="image fit">
+								<figure>
+									<img src="images/fulls/occupancy_ratio.png" alt="Occupancy Ratio distribution" />
+									<figcaption>The movies could be rented way more time than they are</figcaption>
+								</figure>
+							</span></div>
+						</div>
+					</div>
+					<h3>Geographical Distribution of customers and revenue</h3>
+					Below you can find several maps with various distributions.
+					Click on any to enlarge, and use the arrows to navigate between them.
+					<div class="row">
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/fulls/customers_map_full.png" class="image fit thumb"><img src="images/thumbs/customers_map_thumb.png" alt="Customers Map" /></a>
+								<p>Customers Distribution Map</p>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/fulls/revenue_map_full.png" class="image fit thumb"><img src="images/thumbs/revenue_map_thumb.png" alt="Revenue Map" /></a>
+								<p>Revenue Distribution Map</p>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/fulls/revenue_per_customer_map_full.png" class="image fit thumb"><img src="images/thumbs/revenue_per_customer_map_thumb.jpg" alt="Revenue per customer Map" /></a>
+								<p>Revenue per Customer Distribution Map</p>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/fulls/top5_percent_map_full.png" class="image fit thumb"><img src="images/thumbs/top5_percent_map_thumb.png" alt="Top5% spenders Map" /></a>
+								<p>Top 5% spenders Distribution Map</p>
+							</article>
+					</div>
+ 					<h2>5. Results</h2> 
+					<h3>Recommendations to the online video service launch strategy</h3>
 						<ul>
 							<li>Remove variable rental duration concept and apply one single duration for all rentals. Recommended 48H.</li>
+							<li>Eliminate or review entirely the penalty policy. It doesn't make sense online, and makes us lose money.</li>
 							<li>Focus promotional efforts on the top 30% of films. They represent more than half of the revenue.</li>
 							<li>Expand the film catalog with films based in our top countries (e.g. Bollywood films, as India is the top country in customers and revenue)</li>
 							<li>Monitor dynamically occupancy ratio to:
