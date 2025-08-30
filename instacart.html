@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Data Analytics Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a class="image avatar"><img src="images/rockbuster_logo.png" alt="RockBuster Logo" /></a>
+					<h1><strong>Instacart Grocery Basket Analysis</strong></h1>
+					<h1>Uncovering sales patterns<br />for better customer segmentation</h1>
+				</div>
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<ul class="icons">
+							<li><a href="index.html" class="icon solid fa-home"><span class="label">Home</span></a></li>
+							<li><a href="https://www.linkedin.com/in/vasco-fernandes-404b7722/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/NevesFernandes" class="icon brands fa-github"><span class="label">Github</span></a></li>
+							<li><a href="mailto:neves.fernandes@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					</div>
+				</footer>
+			</header>
+		<!-- Main -->
+			<div id="main">		
+				<header class="major">
+					<h1>Instacart Grocery Basket Analysis</h1>
+				</header>
+				<div>
+				<h2>1. Project Goals</h2>
+					<p class="justified"><u>Motivation</u><br /> 
+					Instacart, an online grocery store that operates through an app, wants to uncover more information about their sales patterns,
+          with the goal of enhancing them.
+          </p> 
+					<p class="justified"><u>Objective</u><br /> 
+					Perform an Exploratory Data Analysis of some of their data (2017 sales) to derive insights on customers purchasing habits and 
+          suggest strategies for better segmentation and targeted marketing.</p>
+				<h2>2. Key Questions</h2>
+					<p class="justified">
+          Many business questions were raised in the beginning of the project, and several others were added during the analysis.
+          The following deserve a highlight:
+						<ul>
+							<li>What are the busiest days of the week and busiest hours of the day?</li>
+							<li>Are our customers spending more at certain times of the day/week?</li>
+							<li>Are certain types of products more popular than others, both in sales volume and revenue?</li>
+							<li>How are our customers segmented in:</li>
+              <ul style="list-style: circle; margin:0">
+							  <li>Loyalty? (how often do they return to Instacart)</li>
+							  <li>Based on loyalty, are there differences in ordering habits (frequency and volume)?</li>
+							  <li>Same as above, but based on demographics like age, family status, income, etc.?</li>
+							  <li>Do different segments show different patterns in the types of products purchased?</li>	
+              </ul>
+						</ul>
+					</p>
+				<h2>3. Process</h2>
+					<p class="justified">
+          The data for this project has two sources:<br />
+          “The Instacart Online Grocery Shopping Dataset 2017”, Accessed via <a href="https://www.kaggle.com/datasets/psparks/instacart-market-basket-analysis" target="_blank">Kaggle</a> on 30/06/2025<br />
+          A fictional customers <a href="https://s3.amazonaws.com/coach-courses-us/public/courses/data-immersion/A4/A4_Data_Assets/customers.zip" download>dataset</a> created in the scope of Career Foundry's Data Analytics course.
+          </p>
+
+
+
+
+
+
+
+
+          
+					
+					<h2>4. Key Insights from Data</h2>
+					<h3>Distribution of revenue across the film catalog</h3>
+					<div class="box alt">
+						<div class="row gtr-50 gtr-uniform">
+							<div class="col-12"><span class="image fit">
+								<figure>
+									<img src="images/fulls/revenue_distribution.png" alt="Distribution curve films vs revenue" />
+									<figcaption>This is probably one of the most interesting insights of the project!</figcaption>
+								</figure>
+							</span></div>
+						</div>
+					</div>
+					<h3>Rental rates performance</h3>. 
+					<p class="justified">
+						<span class="image left"><img src="images/thumbs/revenue_distr.png" alt="Revenue Distribution per rental rate" /></span>
+						<span class="image right"><img src="images/thumbs/legend.png" alt="Rental rates legend" /></span>
+						On the left it's shown the revenue distribution for each of the rental rates defined in the catalog.<br />
+						Rate in this context is simply the price at which the films are rented for the agreed rental duration.
+						Since the number of rentals on each rate are well balanced, the average revenue per rental follows a very similar distribution.
+						But the immediate question was: 
+						<blockquote><b>With a similar number of rentals, shouldn’t a rate of $4.99 produce a revenue approximately 5 times higher than $0.99?</b></blockquote>
+					</p>  
+					<p class="justified">
+						<span class="image right"><img src="images/thumbs/norm_avg_revenue_rental.png" alt="Normalized Average Revenue" /></span>
+						In fact, if we normalize the average revenue per rental, i.e., if we divide the average revenue per rental by the value of the rental rate itself, 
+						we can quickly see that 0.99$ is the one that performs better.
+						<blockquote><b>But why does this happen?</b></blockquote>
+					</p>
+					<p class="justified">
+						The secret lies in the penalty policy. 
+						The customers keep their films in completely different patterns from what would be expectable just by looking at what is defined in the catalog, and they incur in penalties in case of delays.
+						Looking deeper into the data, I’ve discovered that the penalties are a fixed amount (1$) per day of delay, which in turn influences more the lowest rental rate.
+					</p>
+					<div class="box alt">
+						<div class="row gtr-50 gtr-uniform">
+							<div class="col-12"><span class="image fit">
+								<figure>
+									<img src="images/fulls/payments_vs_delays.png" alt="Payments versus delays" />
+									<figcaption>How amounts paid evolve with the days in delay</figcaption>
+								</figure>
+							</span></div>
+						</div>
+					</div>
+					<h3>Ocupancy Ratio</h3>
+					<p class="justified">
+					Another metric developed was the Occupancy Ratio.
+					It was measured the timespan between the first rental date and the last return date on the database, serving as the denominator for the ratio (100% of time).
+					Then, I measured for each existing copy of the films, how much time they were effectively on rental (or on the other hand they were catching dust in our stores shelves).
+					Finally, I've computed an average time of the several copies of each film. The division of the latter by the denominator gave us the film's Occupancy Ratio.
+					</p>
+					<div class="box alt">
+						<div class="row gtr-50 gtr-uniform">
+							<div class="col-12"><span class="image fit">
+								<figure>
+									<img src="images/fulls/occupancy_ratio.png" alt="Occupancy Ratio distribution" />
+									<figcaption>The movies could be rented way more time than they are</figcaption>
+								</figure>
+							</span></div>
+						</div>
+					</div>
+					<h3>Geographical Distributions</h3>
+					Several distribution maps were created to show:
+						<ul>
+							<li>Customers Distribution</li>
+							<li>Revenue Distribution</li>
+							<li>Revenue per customer Distribution</li>
+							<li>Top 5% spender customers Locations</li>	
+						</ul>
+					<div class="row">
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/fulls/customers_map_full.png" class="image fit thumb"><img src="images/thumbs/customers_map_thumb.png" alt="Customers Map" /></a>
+								<p>Customers Distribution Map</p>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/fulls/revenue_map_full.png" class="image fit thumb"><img src="images/thumbs/revenue_map_thumb.png" alt="Revenue Map" /></a>
+								<p>Revenue Distribution Map</p>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/fulls/revenue_per_customer_map_full.png" class="image fit thumb"><img src="images/thumbs/revenue_per_customer_map_thumb.png" alt="Revenue per customer Map" /></a>
+								<p>Revenue per Customer Distribution Map</p>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/fulls/top5_percent_map_full.png" class="image fit thumb"><img src="images/thumbs/top5_percent_map_thumb.png" alt="Top5% spenders Map" /></a>
+								<p>Top 5% spenders Distribution Map</p>
+							</article>
+					</div>
+ 					<h2>5. Results</h2> 
+					<h3>Recommendations to the online video service launch strategy</h3>
+						<ul>
+							<li>Remove variable rental duration concept and apply one single duration for all rentals. Recommended 48H.</li>
+							<li>Eliminate or review entirely the penalty policy:
+								<ul style="list-style: circle; margin:0">
+									<li>On online service, physical return don't exist. At best, an extension of digital rental could be in place</li>
+									<li>As demonstrated, it makes us lose money in higher rental rate films</li>
+								</ul>
+							<li>Focus promotional efforts on the top 30% of films. They represent more than half of the revenue.</li>
+							<li>Expand the film catalog with films based in our top countries (e.g. Bollywood films, as India is the top country in customers and revenue)</li>
+							<li>Monitor dynamically occupancy ratio to:
+							<ul style="list-style: circle; margin:0">
+								<li>decide when to purchase additional licenses for top requested films</li>
+								<li>propose discounted rentals on films with lower occupancy ratio</li>
+							</ul>
+							<li>Focus geographical marketing efforts in the top revenue countries as well as in the top revenue per customer</li>	
+						</ul>
+						<h4><a href="https://docs.google.com/presentation/d/e/2PACX-1vTkLKcSo6BioZy6JMvOB6EPFjh6tqKNX4ADSty6TwQLM-BRn1m30Wrmx1AFveXDU9PqktA9aD5HeubR/pub?start=false&loop=true&delayms=60000" target="_blank">Project Final Presentation (web view)</a></h4>
+						<p class="justified">The full project documentation can be found on Github Repository, including both pdf and ppt versions of the presentation.</p>
+						<ul class="actions fit">
+							<li><a href="index.html#projects" class="button fit icon solid fa-arrow-left">Back to Main Projects</a></li>
+							<li><a href="https://github.com/NevesFernandes/rockbuster" target="_blank" class="button primary fit icon brands fa-github">Github Repository</a></li>
+						</ul>
+				</div>
+			</div>
+			<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
