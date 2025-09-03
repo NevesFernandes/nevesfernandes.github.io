@@ -2162,6 +2162,7 @@ input, select, textarea {
 
 		ol li {
 			padding-left: 0.25em;
+			text-align: justify;
 		}
 
 	ul {
@@ -2172,6 +2173,7 @@ input, select, textarea {
 
 		ul li {
 			padding-left: 0.5em;
+			text-align: justify;
 		}
 
 		ul.alt {
