@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Data Analytics Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a class="image avatar"><img src="images/instacart_logo.png" alt="Instacart Logo" /></a>
+					<h1><strong>Instacart Grocery Basket Analysis</strong></h1>
+					<h1>Uncovering sales patterns<br />for better customer segmentation</h1>
+				</div>
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<ul class="icons">
+							<li><a href="index.html" class="icon solid fa-home"><span class="label">Home</span></a></li>
+							<li><a href="https://www.linkedin.com/in/vasco-fernandes-404b7722/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/NevesFernandes" class="icon brands fa-github"><span class="label">Github</span></a></li>
+							<li><a href="mailto:neves.fernandes@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					</div>
+				</footer>
+			</header>
+		<!-- Main -->
+			<div id="main">		
+				<header class="major">
+					<h1>Instacart Grocery Basket Analysis</h1>
+				</header>
+				<div>
+				<h2>1. Project Goals</h2>
+					<p class="justified"><u>Motivation</u><br /> 
+					Instacart, an online grocery store that operates through an app, wants to uncover more information about their sales patterns,
+          with the goal of enhancing them.
+          </p> 
+					<p class="justified"><u>Objective</u><br /> 
+					Perform an Exploratory Data Analysis (EDA) of their 2017 sales data to derive insights on customers purchasing habits and 
+          suggest strategies for better segmentation and targeted marketing.</p>
+				<h2>2. Key Questions</h2>
+					<p class="justified">
+          Many business questions were raised in the beginning of the project, and several others were added during the analysis.
+          The following deserve a highlight:
+						<ul>
+							<li>What are the busiest days of the week and busiest hours of the day?</li>
+							<li>Are our customers spending more at certain times of the day/week?</li>
+							<li>Are certain types of products more popular than others, both in sales volume and revenue?</li>
+							<li>How are our customers segmented in:</li>
+              				<ul style="list-style: circle; margin:0">
+							  <li>Loyalty? (how often do they return to Instacart)</li>
+							  <li>Based on loyalty, are there differences in ordering habits (frequency and volume)?</li>
+							  <li>Same as above, but based on demographics like age, family status, income, etc.?</li>
+							  <li>Do different segments show different patterns in the types of products purchased?</li>	
+              				</ul>
+						</ul>
+					</p>
+				<h2>3. Process</h2>
+          			The data for this project had two sources:
+					<ul>
+          				<li>“The Instacart Online Grocery Shopping Dataset 2017”, Accessed via <a href="https://www.kaggle.com/datasets/psparks/instacart-market-basket-analysis" target="_blank">Kaggle</a> on 30/06/2025</li>
+          				<li>A fictional customers <a href="https://s3.amazonaws.com/coach-courses-us/public/courses/data-immersion/A4/A4_Data_Assets/customers.zip" download>dataset</a> created in the scope of Career Foundry's Data Analytics course.</li>
+          			</ul>
+					<p class="justified">
+					Due to the nature and size of data, where the largest dataset had over 32M records, 
+					Python was selected as the main tool for the project.
+					Libraries like Pandas for all dataset handling, NumPy supporting some specific computational needs, 
+					and MatPlotlib together with Seaborn to develop the visualizations during the EDA 
+					and later for final reporting, add to the technology package used.
+					All of this being managed behind by Anaconda, as library manager for Python, and using Jupyter Notebook for script development.<br />
+					By specific request of the client, a final report was prepared in Excel, based on their own template.
+					</p>
+					<div class="box alt">
+						<div class="row gtr-50 gtr-uniform">
+							<div class="col-12"><span class="image fit">
+								<figure>
+									<img src="images/fulls/jupyter_notebook.png" alt="Jupyter Notebook" />
+									<figcaption>Script development using Jupyter Notebook, calling main libraries used</figcaption>
+								</figure>
+							</span></div>
+						</div>
+					</div>
+					<p class="justified">
+					All the scripts developed during the project are available in the <a href="https://github.com/NevesFernandes/instacart" target="_blank">Project's Github repository</a>
+					</p>
+					<p class="justified">
+					Before the analysis, a careful preparation of the datasets was done taking care of all aspects of data cleaning as:
+					find and fix mixed datatypes; handle missing values; find and address duplicate records; identify and fix outliers in numeric fields; 
+					remove unnecessary columns (mainly for memory optimization).<br />
+					Below there is an overview of the population flow and the merging process between the datasets.
+					In the final stages, a random slicing was needed due to memory restrictions.
+					This was done using a method called <code>seed()</code> that ensures reproducibilty of this random selection. 
+					</p>
+					<div class="box alt">
+						<div class="row gtr-50 gtr-uniform">
+							<div class="col-12"><span class="image fit">
+								<figure>
+									<img src="images/fulls/population_flow.png" alt="Population Flow" />
+									<figcaption>Overview of population flow, from original datasets (in grey) to final merges.</figcaption>
+								</figure>
+							</span></div>
+						</div>
+					</div>
+					<h2>4. Key Insights from Data</h2>
+					<h3>Distribution of orders and revenue across the day/week</h3>
+					<div class="box alt">
+						<div class="row gtr-50 gtr-uniform">
+							<div class="col-6"><span class="image fit"><img src="images/thumbs/bar_hod.png" alt="Orders volume throughout the day" /></span></div>
+							<div class="col-6"><span class="image fit"><img src="images/thumbs/bar_total_per_hour.png" alt="Revenue throughout the day" /></span></div>
+						</div>
+					</div>
+					
+					The preferred time window for our customers to place orders is between 10:00 and 16:00.<br />
+					The number of orders and revenue follow the same pattern throughout the day.
+					</p>
+					<div class="box alt">
+						<div class="row gtr-50 gtr-uniform">
+							<div class="col-6"><span class="image fit"><img src="images/thumbs/bar_dow.png" alt="Orders volume throughout the week" /></span></div>
+							<div class="col-6"><span class="image fit"><img src="images/thumbs/bar_total_per_day.png" alt="Revenue throughout the week" /></span></div>
+						</div>
+					</div>
+					<p class="justified">
+						Saturday and Sunday are the preferred days to shop.<br />
+						Number of orders and revenue follow the same pattern throughout the week.
+					</p>
+					<h3>Products sold and revenue across departments</h3> 
+					<div class="box alt">
+						<div class="row gtr-50 gtr-uniform">
+							<div class="col-6"><span class="image fit"><img src="images/thumbs/bar_products_1.png" alt="Top 10 departments by products sold" /></span></div>
+							<div class="col-6"><span class="image fit"><img src="images/thumbs/bar_products_2.png" alt="Top 10 departments by revenue" /></span></div>
+						</div>
+					</div> 
+					<p class="justified">
+						<b>Produce</b> and <b>dairy eggs</b> rank on top of both products sold and revenue.<br />
+						Other departments vary, but <b>beverages</b> and <b>frozen</b> appear on top 5 in both lists.
+					</p>
+					<h3>Loyalty</h3>
+					<blockquote>First off, why is customer loyalty key in retail business?</blockquote>
+					Among many other benefits, if customers shop more frequently with Instacart they will:
+					<ul>
+						<li>most likely shop way less with the competition, ensuring better overall market share</li>
+						<li>ensures a more steady and predictable stream of income</li>
+					</ul>
+					In this project, loyalty was defined by the number of orders placed as:
+						<ul style="list-style: none; margin:0">
+							  <li>loyal with 40 orders or more</li>
+							  <li>regular with 10 orders or more and less than 40</li>
+							  <li>new with less than 10 orders</li>	
+              			</ul>
+					</p>
+
+
+
+
+					
+					<h3>Ordering Behaviours</h3>
+					
+					
+ 					<h2>5. Results</h2> 
+					<h3>Recommendations derived from key insights to operation, sales and marketing</h3>
+						<ul>
+							<li>Target/nudge 'regular' customers to increase loyalty base, and consequently number of orders</li>
+							<li>Run surveys to understand what would engage 'regular/new' customers to order more (and eventually more frequently)</li>
+							<li>Send reminders through various platforms (emails/push notifications)  after an order with the promos that customers could use next
+								<ul style="list-style: circle; margin:0">
+									<li>Ensure that these promos expire on a weekly basis, to engage customers in using them before expiry, i.e, shop weekly or sooner</li>
+								</ul>
+							</li>
+							<li>Ensure that staff on weekends is adjusted to guarantee compliance in the delivery times and customer satisfaction</li>
+							<li>Consider performing specific discounts on Tuesdays and Wednesdays (the less busy days), 
+								especially directed for loyal and regular customers (the responsible for the largest amount of orders), 
+								to try smooth out the demand across the week</li>	
+						</ul>
+						<h4><a href="https://github.com/NevesFernandes/instacart/raw/refs/heads/main/5_Client_Deliverables/Final_report_Instacart_Project.xlsx" target="_blank" download>Link to download Final Report (excel)</a></h4>
+						<p class="justified">The full project documentation can be found on Github Repository, including this final report in Excel.</p>
+						<ul class="actions fit">
+							<li><a href="index.html#projects" class="button fit icon solid fa-arrow-left">Back to Main Projects</a></li>
+							<li><a href="https://github.com/NevesFernandes/instacart" target="_blank" class="button primary fit icon brands fa-github">Github Repository</a></li>
+						</ul>
+				</div>
+			</div>
+			<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
